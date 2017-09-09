@@ -1,0 +1,60 @@
+<div class="container" style="margin-top: 2rem">
+  <div class="row">
+    <div class="col">
+      {{#user}}
+        <h1>
+          You are logged in as {{ username }}.
+          <small><a href="/logout/">Logout</a></small>
+        </h1>
+
+        <h1>Code Snippets</h1>
+
+        <p>
+          <a href="/new/">Add new snippet</a>
+        </p>
+
+        {{#snippets}}
+          <div class="snippet">
+          <h2>
+            <a href="/{{_id}}">
+              {{title}}
+            </a>
+          </h2>
+          <dl>
+          {{#body}}
+          <dt>
+            Code Snippet
+          </dt>
+          <dd>
+            {{.}}
+          </dd>
+          {{/body}}
+          {{#optionalNotes}}
+          <dt>
+            Optional Notes
+          </dt>
+          <dd>
+            {{.}}
+          </dd>
+          {{/optionalNotes}}
+          {{#language}}
+          <dt>
+            Language
+          </dt>
+          <dd>
+            {{.}}
+          </dd>
+          {{/language}}
+          </dl>
+          </div>
+        {{/snippets}}
+      {{/user}}
+      {{^user}}
+      <h1>
+        You are not logged in.
+        <small><a href="/login/">Login</a> | <a href="/register/">Register</a></small>
+      </h1>
+      {{/user}}
+    </div>
+  </div>
+</div>

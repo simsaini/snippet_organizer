@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 4rem">
+  <div class="row">
+    <div class="col">
+      <h1>Login</h1>
+      {{#messages.error}}
+          <div class="alert alert-danger" role="alert">
+            {{.}}
+          </div>
+      {{/messages.error}}
+      <form method="POST" action="/login/">
+        <div class="username">
+          <label for="username-box">Username</label>
+          <input type="text" id="username-input" name="username" class="form" />
+        </div>
+        <div class="password">
+          <label for="password-box">Password</label>
+          <input type="password" id="password-input" name="password" class="form" />
+        </div>
+        <button type="submit" class="submitButton">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

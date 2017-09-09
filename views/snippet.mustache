@@ -1,0 +1,51 @@
+{{#snippet}}
+<div class="snippet">
+  <h2>{{title}}</h2>
+  <p>
+    <a href="/{{_id}}/edit/">Edit Snippet</a> |
+    <a href="/">Back to Snippet list</a>
+  </p>
+  <dl>
+  {{#body}}
+  <dt>
+    Code Snippet
+  </dt>
+  <dd>
+    {{.}}
+  </dd>
+  {{/body}}
+  {{#optionalNotes}}
+  <dt>
+    Optional Notes
+  </dt>
+  <dd>
+    {{.}}
+  </dd>
+  {{/optionalNotes}}
+  {{#language}}
+  <dt>
+    Language
+  </dt>
+  <dd>
+    {{.}}
+  </dd>
+  {{/language}}
+  </dl>
+
+
+  <h3>Other snippets that contains the same tags</h3>
+  <ul>
+  {{#snippetsFromSameTags}}
+    <li>
+      <a href="/{{_id}}/">{{title}}</a>
+    </li>
+  {{/snippetsFromSameLanguage}}
+
+<h3>Other snippets that contain this Language</h3>
+<ul>
+{{#snippetsFromSameLanguage}}
+  <li>
+    <a href="/{{_id}}/">{{title}}</a>
+  </li>
+{{/snippetsFromSameLanguage}}
+</ul>
